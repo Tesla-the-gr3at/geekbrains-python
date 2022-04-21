@@ -12,12 +12,9 @@
 # Необходимо собрать аналитику о товарах. 
 # Реализовать словарь, в котором каждый ключ — характеристика товара, например название, а значение — список значений-характеристик, например список названий товаров.
 
-
-
 goods = []
 stats_goods = {}
 
-"""
 for i in range(1,4):                                                  # Ask for user input 3 times
     category_number = i
     category = input("Please enter category name:")
@@ -35,23 +32,21 @@ for i in range(1,4):                                                  # Ask for 
     goods_tuple = (category_number, goods_dictionary)
     goods.append(goods_tuple)
     print(goods)
-"""
-
-goods = [
-    (1, {'Category': 'computers', 'Price': 1000, 'Stock': 5, 'Pieces': 'st'}),
-    (2, {'Category': 'printers', 'Price': 800, 'Stock': 10, 'Pieces': 'st'}),
-    (3, {'Category': 'scaner', 'Price': 600, 'Stock': 15, 'Pieces': 'st'})
-    ]
-
-# Create new empty dictionary, which will be populated with the final stats
+    
+# Create new empty dictionary, with categories names
 for i in goods:
-    for key,value in i.items():
-        stats_goods.update(key = [])
+    information=i[1]
+    for key,value in information.items():
+        stats_goods[key] = []
 
 # Get the stats
 for cat in goods:
-    information = goods[1]
+    information = cat[1]
     for key,value in information.items():
-        stats_goods[key] += value
+        stats_goods[key].append(value)
 
-print(stats_goods)
+for i in stats_goods:
+    if i == "Pieces":
+        print(i,set(stats_goods[i]))
+    else:       
+        print(i,stats_goods[i])
