@@ -21,5 +21,5 @@ def my_func(a,b):
     result2 = 1 / (a**b_module)
     
     return result, result2
-print(my_func(4,-4))
+
     
