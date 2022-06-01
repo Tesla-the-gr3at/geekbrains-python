@@ -18,8 +18,6 @@ def my_func(a,b):
     
 
     #use built-in function
-    result2 = 1 / (a**b_module)
+    result2 = a**b
     
     return result, result2
-
-    
