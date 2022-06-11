@@ -8,6 +8,7 @@ def summ_numbers(user_data:str, special_character:str):
     :param user_data: String of numbers, separated by space
     :param special_character: Special character used to break the function execution
     :return: Integer - sum of numbers passed in user_data argument
+    
     """
     result = 0
     user_data = user_data.split(" ")                    # Convert string to a list
